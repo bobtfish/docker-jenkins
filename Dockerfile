@@ -2,7 +2,7 @@
 FROM ubuntu:12.04
 RUN apt-get update
 RUN apt-get install -y build-essential openjdk-7-jdk maven python-dev libz-dev libcurl4-gnutls-dev libsasl2-dev git
-ADD http://mirrors.jenkins-ci.org/war/1.568/jenkins.war /opt/jenkins.war
+ADD http://mirrors.jenkins-ci.org/war/1.574/jenkins.war /opt/jenkins.war
 RUN ln -sf /jenkins /root/.jenkins
 ADD http://archive.apache.org/dist/mesos/0.19.1/mesos-0.19.1.tar.gz /opt/mesos-0.19.1.tar.gz
 WORKDIR /opt
