@@ -8,4 +8,8 @@ ADD http://archive.apache.org/dist/mesos/0.19.1/mesos-0.19.1.tar.gz /opt/mesos-0
 WORKDIR /opt
 RUN tar xzf mesos-0.19.1.tar.gz && ln -s mesos-0.19.1 mesos && cd mesos && mkdir build && cd build && ../configure && make
 RUN ln -s /usr/lib/jvm/java-6-openjdk-amd64/jre/lib/amd64/server/libjvm.so /usr/lib/libjvm.so
+RUN ln -sf /jenkins /root/.jenkins
+EXPOSE 8080
+VOLUME ["/jenkins"]
+CMD /usr/bin/java -jar /opt/jenkins.war $JAVA_OPTS
 
