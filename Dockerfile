@@ -8,5 +8,5 @@ RUN tar xzf mesos-0.19.1.tar.gz && cd mesos-0.19.1 && mkdir build && cd build &&
 WORKDIR /jenkins
 EXPOSE 8080
 VOLUME ["/jenkins"]
-CMD /usr/bin/java -jar /opt/jenkins.war $JAVA_OPTS
+CMD /usr/bin/java -jar /usr/share/jenkins/jenkins.war
 

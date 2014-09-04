@@ -1,5 +1,8 @@
 class { 'apt': }
-class { 'jenkins': }
+class { 'jenkins':
+  service_enable => false,
+  service_ensure => undef,
+}
 jenkins::plugin {
     'git':
 }
